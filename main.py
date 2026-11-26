@@ -13,6 +13,9 @@ import os
 
 JOKE = "The office plant died in March. Facilities marked it resolved, and now it supervises the interns."
 
+# The gate allows 1-200 characters; keep the entry inside it by construction.
+assert 1 <= len(JOKE) <= 200, "joke must be 1-200 characters"
+
 def main():
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8", newline="") as f:
